@@ -78,9 +78,12 @@ const usuariosDelete= async (req, res =response) => {
     // lo que hago asi es cambiarle es estado al usuario, de este modo no lo borro de la base de datos, sino que hago que deje de aparcer en la lista de usuarios activos, para no perder al usuario de la BD y por consiguiente todos los registros modificados por el mismo.
     const {id} = req.params;
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
+
+    const usuarioAutenticado = req.usuario;
     
     res.json({
-        usuario
+        usuario,
+        usuarioAutenticado
     })
 }
 
