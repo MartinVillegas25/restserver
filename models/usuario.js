@@ -20,6 +20,7 @@ const UsuarioSchema = Schema({
     rol: {
         type: String,
         required: true,
+        defaut: 'USER_ROLE',
         emun: ['ADMIN_ROLE', 'USER_ROLE']//CON Esto defino que roles estan habilitados, o es el uno o el otro.
     },
     estado: {
