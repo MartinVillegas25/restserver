@@ -41,6 +41,7 @@ const buscarCategoria= async (termino='', res) => {
            result: (categoria) ? [categoria] : []
         })
     };
+    //con esta expresion regular validamos que el termino no tiene que estar exactamente igual, sino que tiene que ser parte de alguna categoria/producto, del mismo modo que sea insensible a minuscula o mayusculas
     const regexp = new RegExp(termino, 'i');
     const categorias = await Categoria.find({
         nombre:regexp, estado:true
