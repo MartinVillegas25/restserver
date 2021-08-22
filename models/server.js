@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const { dbConnection } = require('../database/config');
 const fileUpload = require('express-fileupload');//esto es un npm para la carga de archivos
+const {socketController} = require('../socket/controlador')
 
 
 class Server{
@@ -11,6 +12,8 @@ class Server{
 
         this.app = express();
         this.port = process.env.PORT;
+        this.server = require('http').createServer(this.app);
+        this.io = require('socket.io')(this.server)
      
         this.paths={
 
@@ -34,6 +37,10 @@ class Server{
 
         // rutas de aplicacion
         this.routes();
+
+        //sockets
+
+        this.sockets();
      }
 
      async conectarDB() {
@@ -73,8 +80,12 @@ class Server{
          
     }
 
+    sockets(){
+        this.io.on("connection", (socket) => socketController (socket, this.io) )
+    }
+
     listen(){
-        this.app.listen(this.port, ()=> {
+        this.server.listen(this.port, ()=> {
             console.log('server listening on port', this.port)
         })
     }

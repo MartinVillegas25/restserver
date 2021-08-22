@@ -28,7 +28,8 @@ router.post('/',[
 
     // asi verificamos si esta el rol en la base de datos, con la propiedad custom
     check('rol').custom( esRoleValido),
-    validarCampos
+    validarCampos,
+    
 
 ] ,usuariosPost );
 

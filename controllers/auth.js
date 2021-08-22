@@ -114,7 +114,22 @@ const googleSingin = async(req, res = response) => {
 
 }
 
+const renovarToken =  async (req, res=response) => {
+
+    const {usuario}= req;
+     //general jwt
+
+     const token = await generarJwt(usuario.id);
+    
+
+    res.json({
+        usuario,
+        token
+    })
+}
+
 module.exports = {
     login,
-    googleSingin
+    googleSingin,
+    renovarToken
 }

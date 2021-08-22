@@ -1,6 +1,7 @@
 const { response} = require('express');
 const Usuario = require('../models/usuario');
 const bcryptjs = require('bcryptjs');
+const {cargarArchivo}=require('../controllers/uploads')
 
 
 
@@ -66,6 +67,7 @@ const usuariosPost= async (req, res =response) => {
     // ahora le tengo que decir a mongoose que lo guarde en la base de datos
 
     await usuario.save();
+    
 
     res.send({
         

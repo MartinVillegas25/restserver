@@ -1,0 +1,96 @@
+*{
+    font-family:'Roboto';
+    
+}
+#contenedor{
+    background-image: url('./imagenes/pexels-alex-andrews-821754.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container{
+    background-image: url('./imagenes/pexels-negative-space-33999.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+
+
+h1{
+     font-size:36px;
+     text-align: center;
+     margin-left: 5px;    
+     
+}
+
+h2{
+    font-size:24px;
+    text-align: center;
+    margin-left: 5px;    
+    
+}
+
+a{
+    text-decoration:none;
+    
+}
+
+#google{
+    
+   margin-left:35%
+}
+
+#googleSalir{
+    margin-left:35%
+}
+#global1{
+    background-color: white;
+    opacity: 0.85;
+}
+
+#mensajes{
+    
+    font-size:20px;
+    background-color: white;
+    padding: 10px;
+
+}
+
+#global{
+    opacity: 0.95;
+}
+
+#monstrarpass{
+     margin-right: 0;
+     padding: 0;
+}
+
+.newcuenta{
+    background-image: url('./imagenes/Diseño\ sin\ título_pages-to-jpg-0001.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#chat{
+    background-color: white;
+    opacity: 0.85;
+    font-size:20px;
+    padding: 10px;
+}
+
+#usuarios{
+    background-color: white;
+    
+    font-size:20px;
+    padding: 10px;
+}
+
+#formulario{
+    background-color:white;
+    box-shadow: 1px 1px 2px rgb(219, 218, 218);
+    opacity: 0.95;
+}

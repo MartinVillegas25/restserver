@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class= "newcuenta">
+    <section>
+        <h1>Crear nueva cuenta</h1>
+        <br>
+        <form id="formulario" class="row col-8 m-auto p-2">
+            <hr>
+            <br>
+            <label for="nombre">Nombre</label>
+            <input class="form-control mb-2" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <br>
+            <label for="correo">Correo</label>
+            <input class="form-control mb-2" type="email" name="correo" id="correo" placeholder="Correo" required>
+            <br>
+            <label for="password">Contraseña</label>
+            <input class="form-control mb-2" type="password" name="password" id="Password" placeholder="contraseña" required>
+            <div  class="row col-sm-12" > 
+                <p class="text-primary col-sm-8"> La contraseña debe tener mas de seis (6) caracteres</p> 
+                <div  class="col-sm-4">
+                    <input type="checkbox" name="mostrarcontraseña" id="mostrarpass" onChange="verpass()" > Mostrar contraseña 
+                </div>
+             </div>
+            <br>
+            <label for="rol">Rol</label>
+            <select name="rol" id="rol" required>
+                <option value="USER_ROLE">Usuario</option>
+            </select>
+            <br>
+            <hr>
+            
+    
+            <button type="submit" class="btn btn-primary col-sm-3 m-auto">Crear Cuenta</button> 
+            <br>
+            <br>
+            <hr>    
+    
+    
+    
+        </form>
+    </section>
+    <script>
+        function verpass(){
+            const password = document.querySelector('#Password');
+            const check = document.querySelector('#mostrarpass');
+
+            if(check.checked==true) // Si la checkbox de mostrar contraseña está activada
+            {
+                password.type = "text";
+            }
+            else // Si no está activada
+            {
+                password.type = "password";
+            }
+
+        }
+
+       
+
+
+    </script>
+
+    <script src="./js/newcuenta.js"></script>
+        
+</body>
+</html>
